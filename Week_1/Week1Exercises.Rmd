@@ -1,0 +1,70 @@
+---
+title: "Week 1 Exercises"
+author: "Jeremiah Lowhorn"
+date: "May 9, 2022"
+output: pdf_document
+---
+
+Please complete all exercises below WITHOUT using any libraries/packages.
+
+# Exercise 1
+Assign 10 to the variable x. Assign 5 to the variable y. Assign 20 to the variable z.
+
+```{r ex1}
+#your code below
+
+```
+
+
+# Exercise 2
+Show that x is less than z but greater than y.
+
+**Note: your output must be a SINGLE boolean, do not output a boolean for each expression.**
+
+```{r ex2}
+#your code below
+
+```
+
+# Exercise 3
+Show that x and y do not equal z. 
+
+**Note: your output must be a SINGLE boolean, do not output a boolean for each expression.**
+
+```{r ex3}
+#your code here
+
+```
+
+
+# Exercise 4
+Show that the formula `x + 2y = z`. 
+
+**Note: your output must be a SINGLE boolean**
+
+```{r ex4}
+#your code below
+
+```
+
+# Exercise 5
+I have created a vector (test_vector) of integers for you. Determine if any of x, y, or z are in the vector. 
+
+**Note: your output must be a SINGLE boolean, do not output a boolean for each expression.**
+
+
+```{r ex5}
+test_vector <- c(1,5,11:22)
+#your code below
+
+```
+
+# Exercise 6
+Show which value is contained in the test vector. To do this you will need to create an element-wise logical vector using operators. `x == vector`. Once you have done that you will need to use slicing to return all indices that have matches.
+**Note: your output should be two integers**
+
+```{r ex6}
+#your code below
+
+```
+
