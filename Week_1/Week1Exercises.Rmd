@@ -1,6 +1,6 @@
 ---
 title: "Week 1 Exercises"
-author: "Jeremiah Lowhorn"
+author: "Your Name Here"
 date: "May 9, 2022"
 output: pdf_document
 ---
