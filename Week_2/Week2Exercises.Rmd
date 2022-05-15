@@ -1,0 +1,31 @@
+---
+title: "Week 2 Exercises"
+author: "Your Name Here"
+date: "May 14, 2022"
+output: pdf_document
+---
+
+Please complete all exercises below. You may use stringr, lubridate, or the forcats library. 
+
+Place this at the top of your script:
+library(stringr)
+library(lubridate)
+library(forcats)
+
+# Exercise 1
+Read the sales_pipe.txt file into an R data frame as sales. 
+
+```{r}
+# Your code here
+
+```
+
+# Exercise 2
+You can extract a vector of columns names from a data frame using the colnames() function. Notice the first column has some odd characters. Change the column name for the FIRST column in the sales date frame to Row.ID. 
+
+**Note: You will need to assign the first element of colnames to a single character.**
+
+```{r}
+# Your code here
+
+```
