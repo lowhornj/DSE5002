@@ -33,16 +33,20 @@ for(i in 1:5) {                                            # Head of first for-l
 }
 
 ### A better way using hashing --> this is on almost every tech interview
-hash_table <- list()
-hash_work <- 0
+library(hash)
+
+h <- hash()
 x5 <- c()
-for( i in 1:5 ) {
+hash_work <- 0
+
+for(i in 1:5){
   hash_work <- hash_work + 1
-  hash_table[[LETTERS[i]]] <- letters[1:5]
+  h[LETTERS[i]] <- letters[1:5]
 }
-for(j in 1:length(hash_table)){
+
+for(j in 1:length(h)){
   hash_work <- hash_work + 1
-  x5 <- c(x5,paste(names(hash_table[j]),hash_table[[j]],sep='_'))
+  x5 <- c(x5,paste(names(h)[j],h[[LETTERS[j]]],sep='_'))
 }
 print(hash_work)
 print(loop_work)
