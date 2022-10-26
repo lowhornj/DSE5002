@@ -3,7 +3,7 @@
 ### Creating data frames using the data.frame function.
 # Create the data frame.
 emp.data <- data.frame(
-  emp_id = c (1:5), 
+  emp_id = c(1:5), 
   emp_name = c("Rick","Dan","Michelle","Ryan","Gary"),
   salary = c(623.3,515.2,611.0,729.0,843.25), 
   
@@ -102,3 +102,12 @@ inherits(sales_csv$Order.Date
          , c("Date")
          )
 str(sales_csv$Order.Date)
+
+
+###################subsetting############
+
+sales_csv[1:10,5]
+
+first_class_df = sales_csv[(sales_csv$Ship.Mode=='First Class')|(sales_csv$City=='Henderson') ,]
+
+

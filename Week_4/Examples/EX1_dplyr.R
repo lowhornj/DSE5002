@@ -16,7 +16,7 @@ sales %>% # the pipe  (%>%) allows you to write multi-line functions passing the
 #simple aggregation
 sales %>% 
  group_by(Segment) %>%
- summarize(sales = sum(Sales))
+ summarize(sum_of_sales = sum(Sales))
 
 #EX2
 #multiple groups & multiple metrics
@@ -35,6 +35,7 @@ sales <- sales %>%
           First.Name = stringr::str_split(Customer.Name,' ',simplify = T)[,1], #must use string simplify = TRUE to properly split in mutate
           Last.Name = stringr::str_split(Customer.Name, ' ',simplify = T)[,2] #must use string simplify = TRUE to properly split in mutate
    )
+
  
 sales$First.Name[1:5]
 inherits(sales$Order.Date, 'Date')

@@ -92,10 +92,10 @@ while (i < 6) {   # Head of while loop + test condition
 ####################################Apply####################################
 
 # row sums for the 1st 5 rows and 1st 4 columns of IRIS
-apply(iris[1:5,0:4],MARGIN=1,FUN=sum)
+apply(iris[1:5,1:4],MARGIN=1,FUN=sum)
 
 # col means for the 1st 4 columns of IRIS
-apply(iris[,0:4],MARGIN=2,FUN=mean)
+apply(iris[,1:4],MARGIN=2,FUN=mean)
 
 # Custom function for apply
 square <- function(x){
@@ -103,6 +103,6 @@ square <- function(x){
 }
 
 # row & col custom function for the 1st 5 rows and 1st 4 columns of IRIS
-apply(iris[1:5,0:4],MARGIN=c(1,2),FUN=square)
+apply(iris[1:5,1:4],MARGIN=c(1,2),FUN=square)
 
-iris[1:5,0:4]
+iris[1:5,1:4]
