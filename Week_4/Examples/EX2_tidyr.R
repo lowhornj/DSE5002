@@ -17,7 +17,7 @@ head(relig_long)
 
 #long to wide (very rare unless you are presenting summary tables in excel like formt)
 
-#fish_ecounters also comes with the tidyr package
+#fish_encounters also comes with the tidyr package
 data(fish_encounters)
 head(fish_encounters)
 
@@ -49,7 +49,8 @@ sales <- sales %>%
   separate(Customer.Name,
            sep=' ',
            into=c('First.Name','Last.Name')
-           ,extra='merge')
+           ,extra='merge'
+           )
 head(data.frame(sales$First.Name[1:5],sales$Last.Name[1:5]))
 
 #conversely, we can combine these columns back together

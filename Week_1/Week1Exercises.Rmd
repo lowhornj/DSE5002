@@ -2,16 +2,25 @@
 title: "Week 1 Exercises"
 author: "Jeremiah Lowhorn"
 date: "May 9, 2022"
-output: pdf_document
+output: 
+    pdf_document:
+    toc: true
+    theme: united
 ---
 
 Please complete all exercises below WITHOUT using any libraries/packages.
 
 # Exercise 1
+## subheader
+### heavily nested
+#### 
 Assign 10 to the variable x. Assign 5 to the variable y. Assign 20 to the variable z.
 
 ```{r ex1}
 #your code below
+library(readxl)
+sales <- read_excel("C:/Users/Jlowh/Documents/DSE5002/Week_2/Data/sales.xlsx")
+sales$Region
 
 ```
 
