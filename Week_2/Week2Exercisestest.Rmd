@@ -30,7 +30,7 @@ You can extract a vector of columns names from a data frame using the colnames()
 
 ```{r}
 # Your code here
-colnames(sales)[colnames(sales) == "?..Row.ID"] <- "Row.ID"
+colnames(sales)[1] <- "Row.ID"
 
 ```
 
@@ -52,8 +52,8 @@ sales$Order.Date <- as.Date(sales$Order.Date
                             )
 
 x = max(sales$Order.Date) - min(sales$Order.Date)
-year <- (x / 365) 
-week <- (x/7)
+year <- days(x)/years(1)
+week <- days(x)/weeks(1)
 print(x)
 print(year)
 print(week)
@@ -68,9 +68,10 @@ What is the average number of days it takes to ship an order?
 # Your code here
 sales$difference <- (sales$Ship.Date - sales$Order.Date)
 result = as.numeric(sum(sales$difference))
-x = length(sales$Order.Date) + length(sales$Ship.Date)
-avg <- result/x
+avg <- result/nrow(sales)
 print(avg)
+# or
+print(mean(sales$difference))
 ```
 
 
@@ -81,8 +82,8 @@ You will need to split the customer name into first and last name segments and t
 ```{r}
 # Your code here
 Customer.Name <- sales[,7]
-sapply(strsplit(Customer.Name, " "), '[',1)
-length(grep("Bill", sales$Customer.Name))
+sales$FN <- sapply(strsplit(Customer.Name, " "), '[',1)
+length(grep("Bill", sales$FN))
 ```
 
 # Exercise 6
@@ -107,15 +108,9 @@ Create an alphabetically ordered barplot for each sales Category in the State of
 
 ```{r}
 # Your code here
-barplot(table(sales$Sales == sales$State))
+texas <- sales[sales$State=="Texas",]
+barplot(table(factor(sales$Category)))
 
-sales$State <- factor(sales$State
-                           ,levels=c('Texas')
-                       )
-
-levels(sales$State)
-
-barplot(table(sales$State))
 ```
 
 # Exercise 9

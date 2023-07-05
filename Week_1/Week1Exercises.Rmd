@@ -18,9 +18,9 @@ Assign 10 to the variable x. Assign 5 to the variable y. Assign 20 to the variab
 
 ```{r ex1}
 #your code below
-library(readxl)
-sales <- read_excel("C:/Users/Jlowh/Documents/DSE5002/Week_2/Data/sales.xlsx")
-sales$Region
+x <- 10
+y <- 5
+z <- 20
 
 ```
 
@@ -32,6 +32,8 @@ Show that x is less than z but greater than y.
 
 ```{r ex2}
 #your code below
+(x<z)&(x>y)
+
 
 ```
 
@@ -43,6 +45,7 @@ Show that x and y do not equal z.
 ```{r ex3}
 #your code here
 
+(x != z) | (y != z)
 ```
 
 
@@ -53,6 +56,8 @@ Show that the formula `x + 2y = z`.
 
 ```{r ex4}
 #your code below
+
+(x + (2*y)) == z
 
 ```
 
@@ -65,6 +70,8 @@ I have created a vector (test_vector) of integers for you. Determine if any of x
 ```{r ex5}
 test_vector <- c(1,5,11:22)
 #your code below
+(x %in% test_vector)|(y %in% test_vector)|(z %in% test_vector)
+
 
 ```
 
@@ -74,6 +81,7 @@ Show which value is contained in the test vector. To do this you will need to cr
 
 ```{r ex6}
 #your code below
+test_vector[(x == test_vector)|(y == test_vector)|(z == test_vector)]
 
 ```
 

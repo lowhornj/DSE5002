@@ -10,3 +10,7 @@ import numpy as np
 df = load_pandas().data
 df.columns
 np.round(np.mean(df['1963']),2)
+
+ds = DataSource()
+
+ds.abspath
