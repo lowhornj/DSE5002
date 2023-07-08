@@ -34,7 +34,7 @@ You can extract a vector of columns names from a data frame using the colnames()
 ```
 
 # Exercise 3
-Convert both Order.ID and Order.Date to date vectors within the sales data frame. What is the number of days between the most recent order and the oldest order?
+Convert both Ship.Date and Order.Date to date vectors within the sales data frame. What is the number of days between the most recent order and the oldest order?
 How many years is that?
 How many weeks?
 
