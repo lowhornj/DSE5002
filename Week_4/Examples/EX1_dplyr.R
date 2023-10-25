@@ -5,9 +5,9 @@ names(sales)
 
 ### Using the Pipe
 sales %>% # the pipe  (%>%) allows you to write multi-line functions passing the same data to each line of code
-   rename(Row.ID = ï..Row.ID) %>%
-   slice_max(Row.ID) %>% #slice the rows with the maximum Row.ID (should be one row)
-   select(Row.ID) # select the single column Row.ID
+   rename(Row_ID = Row.ID) %>%
+   slice_max(Row_ID) %>% #slice the rows with the maximum Row.ID (should be one row)
+   select(Row_ID) # select the single column Row.ID
 
 
 #### Aggregation
@@ -16,16 +16,16 @@ sales %>% # the pipe  (%>%) allows you to write multi-line functions passing the
 #simple aggregation
 sales %>% 
  group_by(Segment) %>%
- summarize(sum_of_sales = sum(Sales))
+ summarize(sum_of_sales = sum(Sales,na.rm=TRUE))
 
 #EX2
 #multiple groups & multiple metrics
 sales %>%
  group_by(Segment,Category) %>%
  summarize(sales=sum(Sales),
-             transactions = n(),
-             distinct_products = n_distinct(Product.Name),
-             average_transaction_sale = sum(sales) / n())
+           transactions = n(),
+           distinct_products = n_distinct(Product.Name),
+           average_transaction_sale = sum(sales) / n())
 
 
 ### Mutate

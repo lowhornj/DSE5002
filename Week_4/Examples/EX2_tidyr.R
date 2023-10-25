@@ -15,7 +15,7 @@ relig_long <- relig_income %>%
   pivot_longer(!religion, names_to = "income", values_to = "count")
 head(relig_long)
 
-#long to wide (very rare unless you are presenting summary tables in excel like formt)
+#long to wide (very rare unless you are presenting summary tables in excel like format)
 
 #fish_encounters also comes with the tidyr package
 data(fish_encounters)
@@ -47,8 +47,8 @@ sales <- read.csv("Week_4/Data/sales.csv", stringsAsFactors=FALSE)
 
 sales <- sales %>%
   separate(Customer.Name,
-           sep=' ',
-           into=c('First.Name','Last.Name')
+           sep=' '
+           ,into=c('First.Name','Last.Name')
            ,extra='merge'
            )
 head(data.frame(sales$First.Name[1:5],sales$Last.Name[1:5]))

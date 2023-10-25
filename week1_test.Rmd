@@ -1,0 +1,25 @@
+---
+title: "Homework 1"
+author: "Jeremiah Lowhorn"
+date: "2023-10-24"
+output:
+   pdf_document:
+      fig_caption: true
+      number_sections: true
+
+---
+
+
+
+# Question 1
+Assign 10 to the variable x. Assign 5 to the variable y. Assign 20 to the variable z.
+
+```{r}
+t = 17
+
+print(t)
+
+
+```
+
+

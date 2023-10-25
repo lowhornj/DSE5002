@@ -81,7 +81,7 @@ Show which value is contained in the test vector. To do this you will need to cr
 
 ```{r ex6}
 #your code below
-test_vector[(x == test_vector)|(y == test_vector)|(z == test_vector)]
+which((x == test_vector)|(y == test_vector)|(z == test_vector))
 
 ```
 

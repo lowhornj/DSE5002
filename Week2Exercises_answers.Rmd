@@ -17,7 +17,7 @@ Read the sales_pipe.txt file into an R data frame as sales.
 
 ```{r}
 # Your code here
-sales <- read.delim("Data/sales_pipe.txt"
+sales <- read.delim("Week_2/Data/sales_pipe.txt"
                      ,stringsAsFactors=FALSE
                      ,sep = "|"
                      ,fileEncoding="WINDOWS-1252" 
@@ -31,6 +31,8 @@ You can extract a vector of columns names from a data frame using the colnames()
 
 ```{r}
 # Your code here
+colnames(sales)[1] <- "Row.ID"
+
 ```
 
 # Exercise 3
@@ -42,6 +44,15 @@ How many weeks?
 
 ```{r}
 # Your code here
+library(lubridate)
+
+sales$Ship.Date <- as.Date(sales$Ship.Date
+,format ="%B %d %Y")
+sales$Order.Date <- as.Date(sales$Order.Date
+,format ="%m/%d/%Y"
+)
+max(sales$Order.Date) - min(sales$Order.Date)
+
 
 ```
 
@@ -51,7 +62,8 @@ What is the average number of days it takes to ship an order?
 
 ```{r}
 # Your code here
-
+sales$difference <- (sales$Ship.Date - sales$Order.Date)
+mean(sales$difference)
 ```
 
 
@@ -61,7 +73,8 @@ You will need to split the customer name into first and last name segments and t
 
 ```{r}
 # Your code here
-
+names = unique(sales$Customer.Name)
+length(grep("Bill", names))
 ```
 
 # Exercise 6
@@ -70,6 +83,7 @@ How many mentions of the word 'table' are there in the Product.Name column?
 
 ```{r}
 # Your code here
+length(grep("(?i)table", sales$Product.Name))
 
 ```
 
@@ -78,6 +92,7 @@ Create a table of counts for each state in the sales data. The counts table shou
 
 ```{r}
 # Your code here
+table(sales$State)
 
 ```
 
@@ -86,6 +101,9 @@ Create an alphabetically ordered barplot for each sales Category in the State of
 
 ```{r}
 # Your code here
+texas_df = sales[sales$State=="Texas",]
+texas_df$Category = factor(texas_df$Category)
+barplot(table(texas_df$Category))
 
 ```
 
@@ -95,7 +113,7 @@ Find the average profit by region.
 
 ```{r}
 # Your code here
-
+aggregate(sales$Profit ~ sales$Region,sales,mean)
 ```
 
 # Exercise 10
@@ -104,6 +122,8 @@ Find the average profit by order year.
 
 ```{r}
 # Your code here
+sales$Order.Year = format(sales$Order.Date,format="%Y")
+aggregate(sales$Profit ~ sales$Order.Year,sales,mean)
 
 ```
 
